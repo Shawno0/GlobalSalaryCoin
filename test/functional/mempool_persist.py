@@ -62,7 +62,7 @@ class MempoolPersistTest(PivxTestFramework):
         self.start_node(1)  # Give this one a head-start, so we can be "extra-sure" that it didn't load anything later
         self.start_node(0)
         self.start_node(2)
-        # Give pivxd a second to reload the mempool
+        # Give globalsalarycoind a second to reload the mempool
         wait_until(lambda: len(self.nodes[0].getrawmempool()) == 5, timeout=1)
         wait_until(lambda: len(self.nodes[2].getrawmempool()) == 5, timeout=1)
         # The others loaded their mempool. If node_1 loaded anything, we'd probably notice by now:

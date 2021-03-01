@@ -13,14 +13,14 @@ The following are some helpful notes on how to run PIVX Core on your native plat
 
 Unpack the files into a directory and run:
 
-- `bin/pivx-qt` (GUI) or
-- `bin/pivxd` (headless)
+- `bin/globalsalarycoin-qt` (GUI) or
+- `bin/globalsalarycoind` (headless)
 
-If this is the first time running PIVX Core (since v5.0.0), you'll need to install the sapling params by running the included `install-params.sh` script, which copies the two params files to `$HOME/.pivx-params`
+If this is the first time running PIVX Core (since v5.0.0), you'll need to install the sapling params by running the included `install-params.sh` script, which copies the two params files to `$HOME/.globalsalarycoin-params`
 
 ### Windows
 
-Unpack the files into a directory, and then run pivx-qt.exe.
+Unpack the files into a directory, and then run globalsalarycoin-qt.exe.
 
 ### macOS
 
@@ -51,7 +51,7 @@ The PIVX repo's [root README](/README.md) contains relevant information on the d
 - [Multiwallet Qt Development](multiwallet-qt.md)
 - [Release Notes](release-notes.md)
 - [Release Process](release-process.md)
-- [Source Code Documentation (External Link)](https://www.fuzzbawls.pw/pivx/doxygen/)
+- [Source Code Documentation (External Link)](https://www.fuzzbawls.pw/globalsalarycoin/doxygen/)
 - [Translation Process](translation_process.md)
 - [Unit Tests](unit-tests.md)
 - [Unauthenticated REST Interface](REST-interface.md)

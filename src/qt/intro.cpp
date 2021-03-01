@@ -11,7 +11,7 @@
 #include "guiutil.h"
 
 #include "util.h"
-#include "qt/pivx/qtutils.h"
+#include "qt/globalsalarycoin/qtutils.h"
 
 #include <QFileDialog>
 #include <QMessageBox>
@@ -206,8 +206,8 @@ bool Intro::pickDataDirectory()
     }
 
     /* Only override -datadir if different from the default, to make it possible to
-     * override -datadir in the pivx.conf file in the default data directory
-     * (to be consistent with pivxd behavior)
+     * override -datadir in the globalsalarycoin.conf file in the default data directory
+     * (to be consistent with globalsalarycoind behavior)
      */
 
     if (dataDir != getDefaultDataDirectory())

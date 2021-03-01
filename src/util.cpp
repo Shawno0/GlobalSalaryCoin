@@ -6,7 +6,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/pivx-config.h"
+#include "config/globalsalarycoin-config.h"
 #endif
 
 #include "util.h"
@@ -82,8 +82,8 @@
 #include <openssl/crypto.h>
 #include <openssl/rand.h>
 
-const char * const PIVX_CONF_FILENAME = "pivx.conf";
-const char * const PIVX_PID_FILENAME = "pivx.pid";
+const char * const PIVX_CONF_FILENAME = "globalsalarycoin.conf";
+const char * const PIVX_PID_FILENAME = "globalsalarycoin.pid";
 const char * const PIVX_MASTERNODE_CONF_FILENAME = "masternode.conf";
 
 
@@ -326,7 +326,7 @@ static std::string FormatException(const std::exception* pex, const char* pszThr
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "pivx";
+    const char* pszModule = "globalsalarycoin";
 #endif
     if (pex)
         return strprintf(
@@ -348,7 +348,7 @@ fs::path GetDefaultDataDir()
 // Windows < Vista: C:\Documents and Settings\Username\Application Data\PIVX
 // Windows >= Vista: C:\Users\Username\AppData\Roaming\PIVX
 // Mac: ~/Library/Application Support/PIVX
-// Unix: ~/.pivx
+// Unix: ~/.globalsalarycoin
 #ifdef WIN32
     // Windows
     return GetSpecialFolderPath(CSIDL_APPDATA) / "PIVX";
@@ -366,7 +366,7 @@ fs::path GetDefaultDataDir()
     return pathRet / "PIVX";
 #else
     // Unix
-    return pathRet / ".pivx";
+    return pathRet / ".globalsalarycoin";
 #endif
 #endif
 }
@@ -382,7 +382,7 @@ static fs::path ZC_GetBaseParamsDir()
     // Windows < Vista: C:\Documents and Settings\Username\Application Data\PIVXParams
     // Windows >= Vista: C:\Users\Username\AppData\Roaming\PIVXParams
     // Mac: ~/Library/Application Support/PIVXParams
-    // Unix: ~/.pivx-params
+    // Unix: ~/.globalsalarycoin-params
 #ifdef WIN32
     // Windows
     return GetSpecialFolderPath(CSIDL_APPDATA) / "PIVXParams";
@@ -400,7 +400,7 @@ static fs::path ZC_GetBaseParamsDir()
     return pathRet / "PIVXParams";
 #else
     // Unix
-    return pathRet / ".pivx-params";
+    return pathRet / ".globalsalarycoin-params";
 #endif
 #endif
 }
@@ -466,14 +466,14 @@ void initZKSNARKS()
         CFRelease(mainBundle);
 #else
         // Linux fallback path for debuild/ppa based installs
-        sapling_spend = "/usr/share/pivx/sapling-spend.params";
-        sapling_output = "/usr/share/pivx/sapling-output.params";
+        sapling_spend = "/usr/share/globalsalarycoin/sapling-spend.params";
+        sapling_output = "/usr/share/globalsalarycoin/sapling-output.params";
         if (fs::exists(sapling_spend) && fs::exists(sapling_output)) {
             fParamsFound = true;
         } else {
             // Linux fallback for local installs
-            sapling_spend = "/usr/local/share/pivx/sapling-spend.params";
-            sapling_output = "/usr/local/share/pivx/sapling-output.params";
+            sapling_spend = "/usr/local/share/globalsalarycoin/sapling-spend.params";
+            sapling_output = "/usr/local/share/globalsalarycoin/sapling-output.params";
         }
 #endif
         if (fs::exists(sapling_spend) && fs::exists(sapling_output))
@@ -557,7 +557,7 @@ void ArgsManager::ReadConfigFile()
 {
     fs::ifstream streamConfig(GetConfigFile());
     if (!streamConfig.good()) {
-        // Create empty pivx.conf if it does not exist
+        // Create empty globalsalarycoin.conf if it does not exist
         FILE* configFile = fsbridge::fopen(GetConfigFile(), "a");
         if (configFile != NULL)
             fclose(configFile);
@@ -570,7 +570,7 @@ void ArgsManager::ReadConfigFile()
         setOptions.insert("*");
 
         for (boost::program_options::detail::config_file_iterator it(streamConfig, setOptions), end; it != end; ++it) {
-            // Don't overwrite existing settings so command line settings override pivx.conf
+            // Don't overwrite existing settings so command line settings override globalsalarycoin.conf
             std::string strKey = std::string("-") + it->string_key;
             std::string strValue = it->value[0];
             InterpretNegatedOption(strKey, strValue);

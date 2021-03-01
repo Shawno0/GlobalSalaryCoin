@@ -1,15 +1,15 @@
 QT_TS = \
-  qt/locale/pivx_de.ts \
-  qt/locale/pivx_en.ts \
-  qt/locale/pivx_en_US.ts \
-  qt/locale/pivx_es.ts \
-  qt/locale/pivx_es_ES.ts \
-  qt/locale/pivx_fr_FR.ts \
-  qt/locale/pivx_hr_HR.ts \
-  qt/locale/pivx_it.ts \
-  qt/locale/pivx_ko_KR.ts \
-  qt/locale/pivx_nl.ts \
-  qt/locale/pivx_pl.ts \
-  qt/locale/pivx_ru.ts \
-  qt/locale/pivx_tr.ts \
-  qt/locale/pivx_zh_CN.ts
+  qt/locale/globalsalarycoin_de.ts \
+  qt/locale/globalsalarycoin_en.ts \
+  qt/locale/globalsalarycoin_en_US.ts \
+  qt/locale/globalsalarycoin_es.ts \
+  qt/locale/globalsalarycoin_es_ES.ts \
+  qt/locale/globalsalarycoin_fr_FR.ts \
+  qt/locale/globalsalarycoin_hr_HR.ts \
+  qt/locale/globalsalarycoin_it.ts \
+  qt/locale/globalsalarycoin_ko_KR.ts \
+  qt/locale/globalsalarycoin_nl.ts \
+  qt/locale/globalsalarycoin_pl.ts \
+  qt/locale/globalsalarycoin_ru.ts \
+  qt/locale/globalsalarycoin_tr.ts \
+  qt/locale/globalsalarycoin_zh_CN.ts
