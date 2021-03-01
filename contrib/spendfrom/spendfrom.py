@@ -35,9 +35,9 @@ def check_json_precision():
 def determine_db_dir():
     """Return the default location of the globalsalarycoin data directory"""
     if platform.system() == "Darwin":
-        return os.path.expanduser("~/Library/Application Support/PIVX/")
+        return os.path.expanduser("~/Library/Application Support/GlobalSalaryCoin/")
     elif platform.system() == "Windows":
-        return os.path.join(os.environ['APPDATA'], "PIVX")
+        return os.path.join(os.environ['APPDATA'], "GlobalSalaryCoin")
     return os.path.expanduser("~/.globalsalarycoin")
 
 def read_bitcoin_config(dbdir):

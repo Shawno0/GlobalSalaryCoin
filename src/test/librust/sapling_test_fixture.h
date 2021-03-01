@@ -1,9 +1,9 @@
-// Copyright (c) 2020 The PIVX developers
+// Copyright (c) 2020 The GlobalSalaryCoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_SAPLING_TEST_FIXTURE_H
-#define PIVX_SAPLING_TEST_FIXTURE_H
+#ifndef GlobalSalaryCoin_SAPLING_TEST_FIXTURE_H
+#define GlobalSalaryCoin_SAPLING_TEST_FIXTURE_H
 
 #include "test/test_globalsalarycoin.h"
 
@@ -16,4 +16,4 @@ struct SaplingTestingSetup : public TestingSetup {
 };
 
 
-#endif //PIVX_SAPLING_TEST_FIXTURE_H
+#endif //GlobalSalaryCoin_SAPLING_TEST_FIXTURE_H

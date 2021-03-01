@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2020 The PIVX developers
+// Copyright (c) 2015-2020 The GlobalSalaryCoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -82,12 +82,12 @@
 #include <openssl/crypto.h>
 #include <openssl/rand.h>
 
-const char * const PIVX_CONF_FILENAME = "globalsalarycoin.conf";
-const char * const PIVX_PID_FILENAME = "globalsalarycoin.pid";
-const char * const PIVX_MASTERNODE_CONF_FILENAME = "masternode.conf";
+const char * const GlobalSalaryCoin_CONF_FILENAME = "globalsalarycoin.conf";
+const char * const GlobalSalaryCoin_PID_FILENAME = "globalsalarycoin.pid";
+const char * const GlobalSalaryCoin_MASTERNODE_CONF_FILENAME = "masternode.conf";
 
 
-// PIVX only features
+// GlobalSalaryCoin only features
 // Masternode
 std::atomic<bool> fMasterNode{false};
 std::string strMasterNodeAddr = "";
@@ -345,13 +345,13 @@ void PrintExceptionContinue(const std::exception* pex, const char* pszThread)
 
 fs::path GetDefaultDataDir()
 {
-// Windows < Vista: C:\Documents and Settings\Username\Application Data\PIVX
-// Windows >= Vista: C:\Users\Username\AppData\Roaming\PIVX
-// Mac: ~/Library/Application Support/PIVX
+// Windows < Vista: C:\Documents and Settings\Username\Application Data\GlobalSalaryCoin
+// Windows >= Vista: C:\Users\Username\AppData\Roaming\GlobalSalaryCoin
+// Mac: ~/Library/Application Support/GlobalSalaryCoin
 // Unix: ~/.globalsalarycoin
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "PIVX";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "GlobalSalaryCoin";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -363,7 +363,7 @@ fs::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     TryCreateDirectory(pathRet);
-    return pathRet / "PIVX";
+    return pathRet / "GlobalSalaryCoin";
 #else
     // Unix
     return pathRet / ".globalsalarycoin";
@@ -379,13 +379,13 @@ static RecursiveMutex csPathCached;
 static fs::path ZC_GetBaseParamsDir()
 {
     // Copied from GetDefaultDataDir and adapter for zcash params.
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\PIVXParams
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\PIVXParams
-    // Mac: ~/Library/Application Support/PIVXParams
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\GlobalSalaryCoinParams
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\GlobalSalaryCoinParams
+    // Mac: ~/Library/Application Support/GlobalSalaryCoinParams
     // Unix: ~/.globalsalarycoin-params
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "PIVXParams";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "GlobalSalaryCoinParams";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -397,7 +397,7 @@ static fs::path ZC_GetBaseParamsDir()
     // Mac
     pathRet /= "Library/Application Support";
     TryCreateDirectory(pathRet);
-    return pathRet / "PIVXParams";
+    return pathRet / "GlobalSalaryCoinParams";
 #else
     // Unix
     return pathRet / ".globalsalarycoin-params";
@@ -543,13 +543,13 @@ void ClearDatadirCache()
 
 fs::path GetConfigFile()
 {
-    fs::path pathConfigFile(gArgs.GetArg("-conf", PIVX_CONF_FILENAME));
+    fs::path pathConfigFile(gArgs.GetArg("-conf", GlobalSalaryCoin_CONF_FILENAME));
     return AbsPathForConfigVal(pathConfigFile, false);
 }
 
 fs::path GetMasternodeConfigFile()
 {
-    fs::path pathConfigFile(gArgs.GetArg("-mnconf", PIVX_MASTERNODE_CONF_FILENAME));
+    fs::path pathConfigFile(gArgs.GetArg("-mnconf", GlobalSalaryCoin_MASTERNODE_CONF_FILENAME));
     return AbsPathForConfigVal(pathConfigFile);
 }
 
@@ -594,7 +594,7 @@ fs::path AbsPathForConfigVal(const fs::path& path, bool net_specific)
 #ifndef WIN32
 fs::path GetPidFile()
 {
-    fs::path pathPidFile(gArgs.GetArg("-pid", PIVX_PID_FILENAME));
+    fs::path pathPidFile(gArgs.GetArg("-pid", GlobalSalaryCoin_PID_FILENAME));
     return AbsPathForConfigVal(pathPidFile);
 }
 

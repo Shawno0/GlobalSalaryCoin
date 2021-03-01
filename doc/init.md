@@ -84,9 +84,9 @@ OpenRC).
 ### macOS
 
 Binary:              `/usr/local/bin/globalsalarycoind`
-Configuration file:  `~/Library/Application Support/PIVX/globalsalarycoin.conf`
-Data directory:      `~/Library/Application Support/PIVX`
-Lock file:           `~/Library/Application Support/PIVX/.lock`
+Configuration file:  `~/Library/Application Support/GlobalSalaryCoin/globalsalarycoin.conf`
+Data directory:      `~/Library/Application Support/GlobalSalaryCoin`
+Lock file:           `~/Library/Application Support/GlobalSalaryCoin/.lock`
 
 Installing Service Configuration
 -----------------------------------
@@ -124,7 +124,7 @@ use old versions of Upstart and do not supply the start-stop-daemon utility.
 Copy globalsalarycoind.init to /etc/init.d/globalsalarycoind. Test by running `service globalsalarycoind start`.
 
 Using this script, you can adjust the path and flags to the globalsalarycoind program by
-setting the PIVXD and FLAGS environment variables in the file
+setting the GlobalSalaryCoinD and FLAGS environment variables in the file
 /etc/sysconfig/globalsalarycoind. You can also use the DAEMONOPTS environment variable here.
 
 ### macOS

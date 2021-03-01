@@ -86,7 +86,7 @@ src/qt/test/moc*.cpp
 *.qm
 Makefile
 globalsalarycoin-qt
-PIVX-Qt.app
+GlobalSalaryCoin-Qt.app
 background.tiff*
 
 # Rust
